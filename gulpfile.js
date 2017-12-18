@@ -1,9 +1,9 @@
-var gulp     = require('gulp');
+var gulp       = require('gulp');
 var minifyHtml = require('gulp-htmlmin');
-var sass     = require('gulp-ruby-sass');
-var minifyJS = require('gulp-uglify');
-var connect  = require('gulp-connect');
-var concat   = require('gulp-concat');
+var sass       = require('gulp-ruby-sass');
+var minifyJS   = require('gulp-uglify');
+var connect    = require('gulp-connect');
+var concat     = require('gulp-concat');
 
 gulp.task('minifyHtml',function(){
     var options = {
@@ -23,10 +23,10 @@ gulp.task('sass',function(){
 gulp.task('minifyJS',function(){
     return gulp.src('./src/js/*.js').pipe(minifyJS()).pipe(gulp.dest('./dist/js/'));
 });
-gulp.task('html',['sass','minifyJS'],function(){
+gulp.task('html',['minifyHtml','sass','minifyJS'],function(){
     return gulp.src('./src/html/*.html').pipe(connect.reload());
 });
-gulp.task('default',['sass','minifyJS'],function(){
+gulp.task('default',['minifyHtml','sass','minifyJS'],function(){
     connect.server({
         port:9001,
         livereload:true
