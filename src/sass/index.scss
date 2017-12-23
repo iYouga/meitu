@@ -131,8 +131,8 @@
                 .logo{
                     width:122px;
                     background-position:0 7px;
-                    transition:transform 0.5s;
-                    transition:-webkit-transform 0.5s;
+                    transition:transform 0.2s;
+                    transition:-webkit-transform 0.2s;
                 }
                 // 搜索
                 .search{
@@ -166,15 +166,39 @@
                     transform:translate(-50%);
                     -webkit-transform:translate(-50%);
                     &:nth-of-type(1){
-                        top:17px;                        
+                        top:17px; 
+                        transition:transform 0.5s;                       
+                        transition:-webkit-transform 0.5s;                       
                     }
                     &:nth-of-type(2){
-                        top:24px;                        
+                        top:24px; 
+                        transition:opacity 0.5s;                       
+                        -webkit-transition:opacity 0.5s;                       
                     }
                     &:nth-of-type(3){
-                        top:31px;                        
+                        top:31px; 
+                        transition:transform 0.5s;                       
+                        transition:-webkit-transform 0.5s;                        
                     }
                 }
+                .span_top{
+                    transform: rotate(45deg) translateY(10px);
+                    -webkit-transform: rotate(45deg) translateY(10px);
+                    transform-origin:center;
+                    -webkit-transform-origin:center;
+                }
+                .span_center{
+                    opacity:0;
+                }
+                .span_bottom{
+                    transform: rotate(-45deg);
+                    -webkit-transform: rotate(-45deg) translateY(-10px);
+                    transform-origin:center;
+                    -webkit-transform-origin:center;
+                }
+            }
+            .logo_hide{
+                opacity: 0;
             }            
             .logo_slide{
                 transform: translateY(-40px);
@@ -198,17 +222,41 @@
             box-sizing: border-box;
             background:#000; 
             position:fixed;
-            top:48px;
+            top:46px;
             left:0;
             z-index: 5;  
             display:none;     
             .cover_menu{
+                display: none;
                 .cover_recommend_list{
                     margin-top:37px;
                     li{
                         font-size:14px;
                         line-height:42px;
                         border-bottom:1px solid #272727;
+                        transform: translate(-50px,-50px);
+                        -webkit-transform: translate(-50px,-50px);
+                        opacity:0;
+                        &:nth-of-type(1){                            
+                            transition:transform 0.5s 0.2s,opacity 0.5s 0.2s;
+                            transition:-webkit-transform 0.5s 0.2s,opacity 0.5s 0.2s;
+                        }
+                        &:nth-of-type(2){                            
+                            transition:transform 0.5s 0.23s,opacity 0.5s 0.23s;
+                            transition:-webkit-transform 0.5s 0.23s,opacity 0.5s 0.23s;
+                        }
+                        &:nth-of-type(3){                            
+                            transition:transform 0.5s 0.26s,opacity 0.5s 0.26s;
+                            transition:-webkit-transform 0.5s 0.26s,opacity 0.5s 0.26s;
+                        }
+                        &:nth-of-type(4){                            
+                            transition:transform 0.5s 0.29s,opacity 0.5s 0.29s;
+                            transition:-webkit-transform 0.5s 0.29s,opacity 0.5s 0.29s;
+                        }
+                        &:nth-of-type(5){                            
+                            transition:transform 0.5s 0.32s,opacity 0.5s 0.32s;
+                            transition:-webkit-transform 0.5s 0.32s,opacity 0.5s 0.32s;
+                        }
                         a{
                             color:#fff;                            
                             transition:opacity 0.3s;
@@ -219,12 +267,27 @@
                             }
                         }
                     }
+                    .cover_recommend_list_default{
+                        opacity:1;
+                        transform: translate(0,0);
+                        -webkit-transform: translate(0,0);
+                    }
+                    .cover_recommend_list_hide{
+                        opacity: 0;
+                        transform:scale(1.5) translateY(-20px);
+                        transform-origin:100px;
+                        transition:transform 0.5s,opacity 0.5s !important;
+                    }
                 }
                 .search_in{
                     font-size:16px;                    
                     line-height:42px;
                     border-bottom:1px solid #272727;
-                    // opacity: 0;
+                    opacity:0;
+                    transform: translate(-50px,-50px);
+                    -webkit-transform: translate(-50px,-50px);
+                    transition:transform 0.5s 0.35s,opacity 0.5s 0.35s;
+                    transition:-webkit-transform 0.5s 0.35s,opacity 0.5s 0.35s;
                     // 提交按钮
                     button{
                         width:40px;
@@ -327,6 +390,7 @@
                 opacity: 0;
                 // 提交按钮
                 button{
+                    display: inline-block;
                     width:40px;
                     height: 44px;
                     vertical-align: middle;
@@ -338,10 +402,12 @@
                 // 输入栏
                 input{
                     border:none;
+                    width:80%;
                     background:#000;
                     font-size:14px;
                     color:#fff;
                     outline:none;
+                    vertical-align: middle;
                 }
                 // 设置placeholder颜色
                 & ::-webkit-input-placeholder { /* WebKit browsers */                
@@ -364,7 +430,7 @@
                     }
                 }
                 .close_search_top{
-                    display: none;
+                    opacity:0;
                     float:left;
                     width:23px;
                     height:14px;
@@ -988,7 +1054,15 @@
                     position:fixed;
                     top:-30px;
                     left:50%;
-                    transform:translate(-50%);
+                    transform:translate(-50%);                    
+                    -webkit-transform:translate(-50%);                    
+                    transition: transform 0.3s;
+                    transition: -webkit-transform 0.3s;
+                }
+                .close_search_top_show{
+                    opacity: 1;
+                    transform: translateY(-50%);
+                    -webkit-transform: translateY(-50%);
                 }
             }
         }
@@ -1232,6 +1306,7 @@
                     width:100%;
                     border-bottom:1px solid #ebebeb;
                     .column_title{
+                        color:#000;
                         line-height: 37px;
                         .link_list_icon_button{
                             display: inline-block;
