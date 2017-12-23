@@ -1,0 +1,22 @@
+body,div,p,ul,ol,li,dl,dt,dd,table,th,tr,td,caption,form,fieldset,legend,input,img,hr,h1,h2,h3,h4,h5,h6{
+    margin:0;
+    padding:0;
+}
+html{
+    // font-size:8.07vw;
+    overflow-x:hidden; 
+}
+body{
+    font-family:'-apple-system','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+ul,ol{
+    list-style:none;
+}
+a{
+    text-decoration:none;
+}
+img{
+    vertical-align: bottom;
+}
+
+$font_hover_color:#e62579;
