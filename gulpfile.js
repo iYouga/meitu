@@ -28,7 +28,7 @@ gulp.task('html',['minifyHtml','sass','minifyJS'],function(){
 });
 gulp.task('default',['minifyHtml','sass','minifyJS'],function(){
     connect.server({
-        port:9001,
+        port:9000,
         livereload:true
     });
     gulp.watch('./src/html/*.html',['html']);
