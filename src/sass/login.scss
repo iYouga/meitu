@@ -1,0 +1,73 @@
+@import '_common';
+
+
+.content{
+    width:360px;
+    margin:0 auto;
+    /* ----------------------------logo------------------------------ */
+    .logo{
+        width:170px;
+        height:60px;
+        margin:65px auto;
+        background:url('../../img/base_02.png') no-repeat 0 -583px;
+    }
+    /* -------------------------输入部分----------------------------- */
+    %input_out_style{
+        display: flex;
+        font-size:16px;
+        color:#333;
+        line-height: 36px;
+        border-bottom:1px solid #efeef4;
+    }
+    %input_style{
+        flex:1;
+        -webkit-flex:1;
+        line-height: 36px;
+        border:none;
+        outline: none;
+        vertical-align: middle;
+    }
+    .login{
+        .username{
+            align-items: center;
+            -webkit-align-items: center;
+            @extend %input_out_style;
+            .country_code{
+                cursor:pointer;
+                margin-right:10px;
+                vertical-align: middle;
+            }
+            .in_username{
+                @extend %input_style;
+            }
+            .delete_username{
+                display: inline-block;
+                width:20px;
+                height:20px;
+                vertical-align: middle;
+                background:url('../../img/base_02.png') no-repeat -120px 0;
+                display: none;
+            }
+        }
+        .password{
+            @extend %input_out_style;
+            margin-top:12px;
+            .in_password{
+                @extend %input_style;
+            }
+            .password_show{
+                display: inline-block;
+                width:20px;
+                line-height:20px;
+                padding:5px;
+                .iconfont{                    
+                    font-size:22px;
+                    color:#d2d2d6;
+                }
+                .iconfont_ckecked{
+                    color:#747ed6;
+                }
+            }
+        }
+    }
+}
