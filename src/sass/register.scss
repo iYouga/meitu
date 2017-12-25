@@ -1,0 +1,124 @@
+.content{
+    // 注册输入部分
+    .login{
+        .switch_login_way{
+            opacity: 0;
+            a{
+                height:0.12rem;
+                float:none;
+                font-size:0.12rem;
+                color:#ccc;
+                cursor:default;
+            }
+        }
+    }
+    .link{
+        font-size:0.12rem;
+        text-align: center;
+        color:#919194; 
+        a{
+            vertical-align: baseline;                
+        }           
+    }
+    // 注册美图账号
+    .register_account{
+        margin-top:0.94rem;
+        text-align:center;
+        .register_account_title{            
+            font-size:0.12rem;
+            color:#919194;
+        }
+        .app_logo{
+            margin-top:0.13rem;
+            font-size:0;
+            text-align: center;
+            cursor:default;
+            li{
+                display: inline-block;
+                width:0.21589rem;
+                height:0.21589rem;
+                margin:0 0.09rem;
+                background:url('../../img/base_02.png') no-repeat;
+                &:nth-of-type(1){
+                    background-position:-0.78rem -4.05rem;
+                }
+                &:nth-of-type(2){
+                    background-position:-0.26rem -4.05rem;
+                }
+                &:nth-of-type(3){
+                    background-position:-1.05rem -4.05rem;
+                }
+                &:nth-of-type(4){
+                    background-position:0 -4.05rem;
+                }
+                &:nth-of-type(5){
+                    background-position:-0.52rem -4.05rem;
+                }
+                &:nth-of-type(6){
+                    background-position:-1.31rem -4.05rem;
+                }
+            }
+        }
+    }
+}
+
+
+/* 屏幕宽度小于597的时，切换为移动端布局 */
+@media screen and (max-width:597px){
+    .content_out{
+        .content{
+            // 注册输入部分
+            .login{
+                .switch_login_way{
+                    opacity: 0;
+                    a{
+                        height:0.12rem;
+                        float:none;
+                        font-size:0.2rem;
+                        color:#ccc;
+                        cursor:default;
+                    }
+                }
+            }
+            .link{
+                margin-top:0.1rem;
+                font-size:0.22rem;
+                a{
+                    font-size:0.22rem;
+                }
+            }
+            .register_account{
+                .register_account_title{            
+                    font-size:0.2rem;
+                }
+                .app_logo{
+                    margin-top:0.22rem;
+                    li{
+                        width:0.38rem;
+                        height:0.38rem;
+                        margin:0 0.14rem;
+                        background-size:4.64rem auto;
+                        &:nth-of-type(1){
+                            background-position:-1.21rem -6.23rem;
+                        }
+                        &:nth-of-type(2){
+                            background-position:-0.41rem -6.23rem;
+                        }
+                        &:nth-of-type(3){
+                            background-position:-1.62rem -6.23rem;
+                        }
+                        &:nth-of-type(4){
+                            background-position:0 -6.23rem;
+                        }
+                        &:nth-of-type(5){
+                            background-position:-0.81rem -6.23rem;
+                        }
+                        &:nth-of-type(6){
+                            background-position:-2.03rem -6.23rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

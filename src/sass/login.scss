@@ -1,40 +1,83 @@
 @import '_common';
 
-
+html{
+    font-size:100px;
+}
+.info{
+    width:3.6rem;
+    height: 0.32rem;
+    line-height: 0.32rem;
+    text-align: center;
+    background:#ff695c;
+    border-radius: 0.05rem;
+    color:#fff;
+    font-size:0.12rem;
+    position:fixed;
+    top:-0.5rem;
+    left:50%;
+    transform:translate(-50%);
+    -webkit-transform:translate(-50%);
+    transition:top .3s;
+}
+.info_down{
+    top:0.2rem;
+}
 .content{
-    width:360px;
+    width:3.2rem;
+    padding:0 0.2rem;
     margin:0 auto;
+    cursor:pointer;
     /* ----------------------------logo------------------------------ */
-    .logo{
-        width:170px;
-        height:60px;
-        margin:65px auto;
-        background:url('../../img/base_02.png') no-repeat 0 -583px;
+    .logo_top{
+        width:1.7rem;
+        height:0.6rem;
+        margin:0.65rem auto;
+        background:url('../../img/base_02.png') no-repeat 0 -5.83rem;
     }
     /* -------------------------输入部分----------------------------- */
     %input_out_style{
         display: flex;
-        font-size:16px;
+        font-size:0.16rem;
         color:#333;
-        line-height: 36px;
+        line-height: 0.36rem;
         border-bottom:1px solid #efeef4;
+         // 设置placeholder字体大小和颜色
+         & ::-webkit-input-placeholder { /* WebKit browsers */ 
+            font-size:0.15rem;
+            color:#d4d4d5;
+        } 
+        & :-moz-placeholder { /* Mozilla Firefox 4 to 18 */ 
+            font-size:0.15rem;
+            color:#d4d4d5;
+        } 
+        & ::-moz-placeholder { /* Mozilla Firefox 19+ */ 
+            font-size:0.15rem;
+            color:#d4d4d5;
+        } 
+        & :-ms-input-placeholder { /* Internet Explorer 10+ */ 
+            font-size:0.15rem;
+            color:#d4d4d5;
+        }
     }
     %input_style{
         flex:1;
         -webkit-flex:1;
-        line-height: 36px;
+        line-height: 0.36rem;
         border:none;
         outline: none;
-        vertical-align: middle;
+        vertical-align: middle;       
     }
+
     .login{
+        font-size:16px;
+        // 用户名
         .username{
             align-items: center;
             -webkit-align-items: center;
             @extend %input_out_style;
             .country_code{
                 cursor:pointer;
-                margin-right:10px;
+                margin-right:0.1rem;
                 vertical-align: middle;
             }
             .in_username{
@@ -42,26 +85,40 @@
             }
             .delete_username{
                 display: inline-block;
-                width:20px;
-                height:20px;
+                width:0.2rem;
+                height:0.2rem;
+                margin-right:0.05rem;
                 vertical-align: middle;
-                background:url('../../img/base_02.png') no-repeat -120px 0;
+                background:url('../../img/base_02.png') no-repeat -1.2rem 0;
                 display: none;
             }
         }
+        // 密码
         .password{
             @extend %input_out_style;
-            margin-top:12px;
+            margin-top:0.12rem;
+            align-items: center;
+            -webkit-align-items: center;
             .in_password{
                 @extend %input_style;
             }
+            // 删除密码
+            .delete_username{
+                display: inline-block;
+                width:0.2rem;
+                height:0.2rem;
+                margin-right:0.05rem;
+                vertical-align: middle;
+                background:url('../../img/base_02.png') no-repeat -1.2rem 0;
+                display: none;
+            }
+            // 显示密码
             .password_show{
                 display: inline-block;
-                width:20px;
-                line-height:20px;
-                padding:5px;
+                width:0.2rem;
+                margin-right:0.07rem;
                 .iconfont{                    
-                    font-size:22px;
+                    font-size:0.22rem;
                     color:#d2d2d6;
                 }
                 .iconfont_ckecked{
@@ -69,5 +126,347 @@
                 }
             }
         }
+        // 短信验证码登录
+        .switch_login_way{
+            overflow: hidden;
+            padding:0.07rem 0;
+            margin-bottom:0.25rem;
+            a{
+                float:right;
+                color:#747ed6;
+                font-size:0.12rem;
+                margin-right:0.1rem;
+                &:hover{
+                    color:#929ade;
+                }
+            }
+        }
+        // 登录按钮
+        .submit{
+            width:100%;
+            line-height:0.46rem;
+            font-size:0.16rem;
+            color:#dcdff5;
+            outline:none;
+            border:none;
+            border-radius:0.23rem;
+            background:#babfeb;
+            cursor:pointer;
+        }
+    }
+    // 忘记密码、立即注册
+    .link{
+        text-align: center;
+        font-size:0;
+        a{
+            display: inline-block;
+            font-size:0.12rem;
+            color:#747ed6;
+            line-height: 0.34rem;
+            vertical-align: middle;
+            &:hover{
+                color:#929ade;
+            }
+        }
+        span{
+            display:inline-block;
+            width:1px;
+            height: 0.12rem;
+            background:#afafb1;
+            margin:0 0.12rem;
+            vertical-align: middle;
+        }
+    }
+    // 快速登录
+    .quick_login{
+        .quick_login_top{            
+            width:2.6rem;
+            height:1px;
+            margin:0.95rem auto 0;
+            background:#efeef4;
+            position: relative;
+            p{
+                font-size:0.14rem;
+                color:#919194;
+                line-height: 0.36rem;
+                white-space:nowrap;
+                padding:0 0.1rem;
+                background:#fff;
+                position:absolute;
+                top:50%;
+                left:50%;
+                transform:translate(-50%,-50%);
+                -webkit-transform:translate(-50%,-50%);
+            }
+        }
+        .quick_login_way{
+            text-align: center;
+            font-size:0;
+            a{
+                display: inline-block;
+                width:0.36rem;
+                height:0.36rem;
+                margin:0.25rem 0.13rem 0;
+                background:url('../../img/base_02.png') no-repeat;
+            }
+            .sina{
+                background-position:0 -0.3rem;
+            }
+            .qq{
+                background-position:-0.8rem -0.3rem;
+            }
+        }
+    }
+}
+/* ---------------------------footer--------------------------- */
+.footer{
+    width:100%;
+    text-align: center;
+    background:#fafafa;
+    margin-top:0.43rem;
+    padding-top:0.3rem;
+    .footer_link{
+        overflow: hidden;
+        font-size:0;
+        li{
+            display: inline-block;
+            line-height: 1;
+            font-size:0.13rem;
+            padding:0 0.12rem;
+            border-right:1px solid #aeaeb0;
+            a{
+                color:#919194;
+                &:hover{
+                    color:#747ed6;
+                }
+            }
+        }
+        .to_top{
+            border:none;
+        }
+    }
+    .copyRight{
+        font-size:0.12rem;
+        color:#919194;
+        margin-top:0.07rem;
+        a{
+            color:#919194;
+            line-height: 0.2rem;
+            &:hover{
+                color:#747ed6;
+            }
+        }
+    }
+    .logo{
+        display: block;
+        width:0.7rem;
+        height:0.22rem;
+        margin:0.1rem auto 0.3rem;
+        background:url('../../img/base.png') no-repeat -0.04rem -0.05rem;
+    }
+}
+
+/* 屏幕宽度小于616的时，切换rem */
+/* @media screen and (max-width:616px) and (min-width:597px){
+    html{
+        font-size:25.89vw;
+    }
+    .content_out{
+        width:100%;
+        .content{
+            .logo{
+                background-size:1.886rem auto;
+            }
+        }
+    }
+} */
+/* 屏幕宽度小于597的时，切换为移动端布局 */
+@media screen and (max-width:597px){
+    /* 隐藏footer部分 */
+    .footer{
+        display: none;
+    }
+    html{
+        font-size:16.75vw;
+    }
+    .info{
+        width:100%;
+        height:0.45rem; 
+        line-height:0.45rem; 
+        border-radius: 0; 
+        font-size:0.2rem;      
+    }
+    .info_down{
+        top:0;
+    }
+    .content_out{
+        width:100%;
+        .content{
+            max-width:414px;
+            width:100%;
+            margin:0 auto;
+            padding:0 0.3rem;
+            box-sizing: border-box;
+            .logo_top{
+                width:2.62922rem;
+                height:0.98rem;
+                background-size:4.64rem auto;
+                background-position:0 -9.03rem;
+            }
+            /* -------------------------输入部分----------------------------- */ 
+            .login{
+                font-size:16px;
+                // 用户名
+                .username{
+                    font-size:0.24rem;
+                    position: relative;
+                    // 设置placeholder字体大小和颜色
+                    & ::-webkit-input-placeholder { /* WebKit browsers */ 
+                        font-size:0.24rem;
+                    } 
+                    & :-moz-placeholder { /* Mozilla Firefox 4 to 18 */ 
+                        font-size:0.24rem;
+                    } 
+                    & ::-moz-placeholder { /* Mozilla Firefox 19+ */ 
+                        font-size:0.24rem;
+                    } 
+                    & :-ms-input-placeholder { /* Internet Explorer 10+ */ 
+                        font-size:0.24rem;
+                    }                
+                    .country_code{
+                        line-height: 0.64rem;
+                        margin-right:0.19rem;
+                    }
+                    .in_username{
+                        line-height:0.64rem;
+                        font-size:0.24rem;
+                    }
+                    .delete_username{
+                        width:0.3rem;
+                        height:0.3rem;
+                        background:url('../../img/base_02.png') no-repeat -1.87rem 0;
+                        background-size:4.64rem auto;
+                        position:absolute;
+                        right:0.07rem;
+                        top:50%;
+                        transform: translateY(-50%);
+                        -webkit-transform: translateY(-50%);
+                        display: none;
+                    }
+                }
+                // 密码
+                .password{
+                    font-size:0.24rem;
+                    line-height: 0.48rem;
+                    margin-top:0.19rem;
+                    position: relative;
+                    // 设置placeholder字体大小和颜色
+                    & ::-webkit-input-placeholder { /* WebKit browsers */ 
+                        font-size:0.24rem;
+                    } 
+                    & :-moz-placeholder { /* Mozilla Firefox 4 to 18 */ 
+                        font-size:0.24rem;
+                    } 
+                    & ::-moz-placeholder { /* Mozilla Firefox 19+ */ 
+                        font-size:0.24rem;
+                    } 
+                    & :-ms-input-placeholder { /* Internet Explorer 10+ */ 
+                        font-size:0.24rem;
+                    } 
+                    .in_password{
+                        width:100%;
+                        line-height: 0.64rem;
+                        font-size:0.24rem;
+                    }
+                    // 删除密码
+                    .delete_username{
+                        width:0.3rem;
+                        height:0.3rem;
+                        background:url('../../img/base_02.png') no-repeat -1.87rem 0;
+                        background-size:4.64rem auto;
+                        position:absolute;
+                        right:0.5rem;
+                        top:50%;
+                        transform: translateY(-50%);
+                        -webkit-transform: translateY(-50%);
+                        display: none;
+                    }
+                    // 显示密码
+                    .password_show{
+                        line-height:0.64rem;
+                        margin-right:0.23rem;
+                        position:absolute;
+                        right:0.07rem;
+                        top:0;                        
+                        .iconfont{                    
+                            font-size:0.4rem;
+                            color:#d2d2d6;
+                        }
+                        .iconfont_ckecked{
+                            color:#747ed6;
+                        }
+                    }
+                }
+                // 短信验证码登录
+                .switch_login_way{
+                    overflow: hidden;
+                    padding:0.12rem 0;
+                    margin-bottom:0.4rem;
+                    a{
+                        float:right;
+                        color:#747ed6;
+                        font-size:0.2rem;
+                        margin-right:0.1rem;
+                        &:hover{
+                            color:#929ade;
+                        }
+                    }
+                }
+                // 登录按钮
+                .submit{
+                    height:0.8rem;
+                    font-size:0.28rem;
+                    border-radius:0.4rem;
+                }
+                // 解决移动端颜色不正常
+                input[type=button], input[type=submit], input[type=file], button { cursor: pointer; -webkit-appearance: none; } 
+            }
+            // 忘记密码、立即注册
+            .link{
+                a{
+                    font-size:0.2rem;
+                    line-height: 0.55rem;
+                }
+                span{
+                    height: 0.2rem;
+                    margin:0 0.14rem;
+                }
+            }
+            // 快速登录
+            .quick_login{
+                .quick_login_top{            
+                    width:80%;
+                    p{
+                        font-size:0.22rem;
+                        line-height: 0.6rem;
+                        padding:0 0.2rem;
+                    }
+                }
+                .quick_login_way{
+                    a{
+                        width:0.6rem;
+                        height:0.6rem;
+                        margin:0.25rem 0.13rem 0;
+                        background-size:5rem auto;
+                    }
+                    .sina{
+                        background-position:0 -0.47rem;
+                    }
+                    .qq{
+                        background-position:-1.32rem -0.47rem;
+                    }
+                }
+            }
+        }        
     }
 }
