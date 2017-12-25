@@ -1,0 +1,121 @@
+@import '_common';
+
+/* ----------------------------顶部nav---------------------------- */
+// 遮罩层
+.shadow{
+    @extend %shadow;
+}
+.nav{
+    @extend %nav;
+}
+/* ----------------------------banner---------------------------- */
+.banner{
+    width:100%;
+    // 配件标题
+    .banner_title{
+        max-width:1200px;
+        margin:0 auto;
+        background:#fff;
+        position: relative;
+        z-index: 2;
+        a{
+            display: inline-block;
+            line-height: 55px;
+            font-size:18px;
+            color:#333;
+        }
+    }
+    // banner图片
+    .banner_img{
+        width:100%;
+        height:424px;
+        a{
+            display: block;
+            width:100%;
+            height:100%;            
+            background:url('../../img/l_banner.png') no-repeat left center;
+            background-size:cover;
+        }
+    }
+}
+/* ----------------------------goodslist------------------------- */
+.goodslist{
+    width:100%;
+    background:#fff;
+    // 商品列表顶部tab标签
+    .goodslist_tab_out{        
+        border-bottom:1px solid #f1f1f1;            
+        .goodslist_tab{
+            max-width:1200px;
+            line-height: 70px;
+            margin:0 auto;
+            a{
+                display: inline-block;
+                margin-left:40px;
+                font-size:16px;
+                color:#555;            
+            }
+            // 当前选中的tab标签
+            .goodslist_tab_checked{
+                color:$font_hover_color;
+            }
+        }
+    }
+    // 商品图片列表
+    .goods_imglist{
+        max-width:1200px;
+        margin:0 auto;
+        padding-bottom:60px;
+        overflow: hidden;
+        // 商品图片
+        li{
+            float:left;
+            width:25%;
+            height:440px;
+            text-align:center;
+            padding:40px 20px;
+            box-sizing: border-box;
+            border-right:1px solid #f1f1f1;
+            border-bottom:1px solid #f1f1f1;
+            transition:all 0.3s;
+            &:nth-child(4n) {
+                border-right-color: transparent;
+            }
+            &:hover{
+                transform: translateY(-3px);
+                -webkit-transform: translateY(-3px);
+                box-shadow:0 10px 30px #ddd; 
+            }
+            .goodsimg{
+                img{                        
+                    width:259px;
+                    height:259px;
+                }
+            }
+            .goodsinfo{
+                font-size:16px;
+                line-height: 20px;
+                color:#333;
+            }
+            .goodsprise{
+                font-size:16px;
+                line-height: 1;
+                margin-top:15px;
+                color:$font_hover_color;
+                span{
+                    margin-left:10px;
+                }
+            }
+        }
+    }
+}
+
+/* ----------------------------link_area------------------------- */
+// 底部链接区域
+.link_area_out{
+    @extend %link_area_out;
+}
+/* ----------------------------copyRight------------------------- */
+.copyRight{
+    @extend %copyRight;
+}
