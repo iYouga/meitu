@@ -13,16 +13,24 @@
             var reg = /^1\d{10}$/;
             if($('.in_username').val() === ''){
                 $('.info').fadeIn().html('请先输入手机号').addClass('info_down');
+                infoHide();
+                return false;
             } else if(!reg.test($('.in_username').val())){
                 $('.info').fadeIn().html('请输入正确的手机号').addClass('info_down');
+                infoHide();
+                return false;
             } else if($('.in_password').val() === ''){
                 $('.info').fadeIn().html('请设置6-16位的密码').addClass('info_down');
+                infoHide();
+                return false;
             }
-            setTimeout(function(){
-                $('.info').fadeOut(300,function(){
-                    $('.info').removeClass('info_down');
-                });
-            },2000);
+            function infoHide(){                
+                setTimeout(function(){
+                    $('.info').fadeOut(300,function(){
+                        $('.info').removeClass('info_down');
+                    });
+                },2000);
+            }
         });
     });
 })(jQuery);

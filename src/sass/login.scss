@@ -444,6 +444,11 @@ html{
             }
             // 快速登录
             .quick_login{
+                /* position:absolute;
+                bottom:1rem;
+                left:50%;
+                transform: translate(-50%);
+                -webkit-transform: translate(-50%); */
                 .quick_login_top{            
                     width:80%;
                     p{
